@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Held &amp; Bound — Botanical · Symbolic · Small Batch</title>
+<meta name="description" content="Hand-formed ritual and symbolic objects, made slowly in small batches with botanical materials, marks and intention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ==================================================
+   TOKENS
+   ================================================== */
+:root{
+  --paper:#F9F5EF;
+  --paper2:#F3EDE3;
+  --ink:#2B2520;
+  --ink2:#5A524A;
+  --clay:#C48B5F;
+  --sage:#8A9A8B;
+  --line:rgba(43,37,32,0.12);
+  --line2:rgba(43,37,32,0.08);
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Inter', sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
+
+:focus-visible{
+  outline:2px solid var(--ink);
+  outline-offset:3px;
+}
+
+/* ==================================================
+   HEADER
+   ================================================== */
+header.site{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(249,245,239,0.94);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+  gap:16px;
+}
+.logo{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:22px;
+  letter-spacing:0.02em;
+  text-decoration:none;
+  height:54px;
+  display:flex;
+  align-items:center;
+}
+.header-tag{
+  font-size:10px;
+  letter-spacing:0.16em;
+  color:var(--ink2);
+  font-weight:600;
+  white-space:nowrap;
+}
+@media (max-width:560px){
+  .header-tag{ font-size:8.5px; letter-spacing:0.1em; }
+}
+
+/* mini live-order pill */
+.order-pill{
+  display:none;
+  align-items:center;
+  gap:8px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:999px;
+  padding:8px 14px 8px 12px;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-decoration:none;
+  border:1px solid var(--ink);
+  white-space:nowrap;
+}
+.order-pill.show{ display:inline-flex; }
+.order-pill .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--clay);
+}
+
+/* ==================================================
+   HERO
+   ================================================== */
+.hero{
+  text-align:center;
+  padding:76px 24px 56px;
+}
+.kicker{
+  font-size:11px;
+  letter-spacing:0.22em;
+  color:var(--ink2);
+  font-weight:600;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(38px,5.6vw,64px);
+  line-height:0.9;
+  font-weight:500;
+  letter-spacing:-0.02em;
+  margin:0 auto 22px;
+  max-width:820px;
+}
+.hero-sub{
+  max-width:520px;
+  margin:0 auto 22px;
+  color:var(--ink2);
+  font-size:15.5px;
+}
+.divider{
+  width:56px;
+  height:2px;
+  background:var(--clay);
+  margin:26px auto;
+  border-radius:2px;
+}
+.hero-note{
+  font-size:13px;
+  color:var(--ink2);
+  max-width:420px;
+  margin:0 auto;
+}
+.hero-note a{
+  color:var(--ink);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* ==================================================
+   BRAND STATEMENT
+   ================================================== */
+.brand-statement{
+  text-align:center;
+  padding:8px 24px 64px;
+}
+.brand-statement p{
+  font-family:var(--serif);
+  font-size:clamp(20px,2.6vw,26px);
+  font-weight:500;
+  max-width:640px;
+  margin:0 auto;
+  color:var(--ink);
+}
+
+/* ==================================================
+   BUTTONS
+   ================================================== */
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  padding:12px 16px;
+  border-radius:999px;
+  background:var(--ink);
+  color:#fff;
+  border:1px solid var(--ink);
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  text-decoration:none;
+  transition:opacity .2s;
+}
+.btn:hover{ opacity:0.85; }
+.btn.secondary{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--ink);
+}
+.btn.clay{
+  background:var(--clay);
+  border-color:var(--clay);
+}
+.btn:disabled{
+  opacity:0.4;
+  cursor:not-allowed;
+}
+.btn-auto{ width:auto; padding:12px 26px; }
+
+/* ==================================================
+   SECTIONS
+   ================================================== */
+section.panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:40px 28px;
+  margin:36px auto;
+  max-width:1180px;
+  scroll-margin-top:90px;
+}
+.section-head{
+  text-align:center;
+  margin-bottom:32px;
+}
+.section-head h2{
+  font-family:var(--serif);
+  font-size:clamp(26px,3.4vw,32px);
+  font-weight:500;
+  margin:0 0 8px;
+}
+.section-head p{
+  color:var(--ink2);
+  font-size:14.5px;
+  max-width:480px;
+  margin:0 auto;
+}
+
+/* ==================================================
+   SHOP GRID
+   ================================================== */
+.shop-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+@media (max-width:900px){ .shop-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .shop-grid{ grid-template-columns:1fr; } }
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px rgba(43,37,32,0.08);
+}
+.card-image{
+  aspect-ratio:1.05;
+  background:#EDE5D8;
+  overflow:hidden;
+}
+.card-image img{ width:100%; height:100%; object-fit:cover; }
+.card-body{ padding:16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.card-title{
+  font-family:var(--serif);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  font-size:19px;
+  font-weight:600;
+}
+.card-desc{
+  font-size:13px;
+  color:var(--ink2);
+  flex:1;
+}
+.card-price{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:600;
+}
+.card-meta{
+  font-size:11px;
+  color:var(--ink2);
+  letter-spacing:0.02em;
+}
+.card-body .btn{ margin-top:8px; }
+
+/* ==================================================
+   CONFIGURATOR
+   ================================================== */
+#configurator{ display:none; }
+#configurator.active{ display:block; }
+
+.config-product-head{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  border:1px solid var(--ink);
+  border-radius:22px;
+  padding:20px 22px;
+  margin-bottom:34px;
+  flex-wrap:wrap;
+}
+.config-product-head .thumb{
+  width:88px;height:88px;border-radius:14px;overflow:hidden;background:#EDE5D8;flex-shrink:0;
+}
+.config-product-head .thumb img{ width:100%;height:100%;object-fit:cover; }
+.config-product-head .info h3{
+  font-family:var(--serif);
+  font-size:24px;
+  margin:0 0 2px;
+}
+.config-product-head .info .price{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:16px;
+  color:var(--ink2);
+}
+
+/* gallery */
+.scroll-gallery{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  border-radius:16px;
+  margin:0 0 10px;
+  background:#EDE5D8;
+}
+.scroll-gallery::-webkit-scrollbar{ display:none; }
+.scroll-gallery img{
+  min-width:100%;
+  aspect-ratio:4/3;
+  scroll-snap-align:start;
+  object-fit:cover;
+}
+.gallery-dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:28px;
+}
+.gallery-dots span{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--line);
+}
+.gallery-dots span.active{ background:var(--ink); }
+
+.step{ margin-bottom:40px; }
+.step-head h3{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:500;
+  margin:0 0 6px;
+}
+.step-head .intro{
+  font-size:13.5px;
+  color:var(--ink2);
+  margin-bottom:18px;
+  max-width:520px;
+}
+
+/* blend grid */
+.blend-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+@media (max-width:900px){ .blend-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .blend-grid{ grid-template-columns:1fr; } }
+
+.select-card{
+  border:1px solid var(--line2);
+  background:var(--paper2);
+  border-radius:14px;
+  padding:14px;
+  text-align:left;
+  width:100%;
+  transition:.2s;
+}
+.select-card:hover{ border-color:var(--ink2); }
+.select-card.selected{
+  border-color:var(--ink);
+  background:#EFE7D9;
+}
+.select-card .img-wrap{
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  aspect-ratio:1.2;
+  background:#e6ddcd;
+  margin-bottom:10px;
+}
+.select-card .img-wrap img{ width:100%;height:100%;object-fit:cover; }
+.select-card .tag{
+  position:absolute;
+  top:8px;left:8px;
+  background:rgba(249,245,239,0.92);
+  backdrop-filter:blur(6px);
+  border:1px solid var(--line2);
+  border-radius:999px;
+  padding:3px 8px;
+  font-size:9px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.select-card .check{
+  position:absolute;
+  top:8px;right:8px;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-size:12px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.select-card.selected .check{ display:flex; }
+.select-card .name{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:2px;
+}
+.select-card .desc{
+  font-size:12px;
+  color:var(--ink2);
+  line-height:1.5;
+}
+.select-card .mood{
+  font-size:11px;
+  color:var(--ink2);
+  font-style:italic;
+  margin-top:6px;
+}
+
+.blend-note{
+  font-size:12.5px;
+  color:var(--ink2);
+  margin-top:16px;
+  max-width:560px;
+}
+
+/* mark grid */
+.mark-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+@media (max-width:900px){ .mark-grid{ grid-template-columns:repeat(2,1fr); } }
+.mark-card{
+  border:1px solid var(--line2);
+  background:var(--paper2);
+  border-radius:14px;
+  padding:16px 10px;
+  text-align:center;
+  transition:.2s;
+}
+.mark-card:hover{ border-color:var(--ink2); }
+.mark-card.selected{
+  border-color:var(--ink);
+  background:#EFE7D9;
+}
+.mark-glyph{
+  font-family:var(--serif);
+  font-size:30px;
+  margin-bottom:6px;
+}
+.mark-name{
+  font-size:11px;
+  letter-spacing:0.06em;
+  font-weight:600;
+  margin-bottom:2px;
+}
+.mark-meaning{
+  font-size:10.5px;
+  color:var(--ink2);
+}
+
+/* attunement */
+.attune-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+@media (max-width:700px){ .attune-grid{ grid-template-columns:1fr; } }
+.attune-card{
+  border:1px dashed var(--line2);
+  background:var(--paper2);
+  border-radius:14px;
+  padding:20px;
+  text-align:left;
+  transition:.2s;
+}
+.attune-card:hover{ border-color:var(--ink2); }
+.attune-card.selected{
+  border-style:solid;
+  border-color:var(--ink);
+  background:#EFE7D9;
+}
+.attune-card .name{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.attune-card .amt{
+  font-size:12px;
+  color:var(--ink2);
+  margin-bottom:8px;
+}
+.attune-card p{
+  font-size:12.5px;
+  color:var(--ink2);
+  margin:0;
+}
+.attune-fields{
+  display:none;
+  margin-top:22px;
+  border-top:1px solid var(--line2);
+  padding-top:20px;
+}
+.attune-fields.show{ display:block; }
+.field-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:12px;
+}
+@media (max-width:600px){ .field-row{ grid-template-columns:1fr; } }
+.field label{
+  display:block;
+  font-size:11px;
+  letter-spacing:0.04em;
+  color:var(--ink2);
+  margin-bottom:5px;
+  font-weight:600;
+}
+.field input, .field textarea{
+  width:100%;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:10px;
+  padding:10px 12px;
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink);
+}
+.field textarea{ min-height:70px; resize:vertical; }
+.disclaimer{
+  font-size:11.5px;
+  color:var(--ink2);
+  font-style:italic;
+  margin-top:14px;
+}
+
+/* order summary */
+.summary-box{
+  border:1px solid var(--ink);
+  border-radius:18px;
+  padding:22px;
+  background:var(--paper2);
+}
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:13.5px;
+  padding:7px 0;
+  border-bottom:1px solid var(--line2);
+}
+.summary-row:last-of-type{ border-bottom:none; }
+.summary-row .lbl{ color:var(--ink2); }
+.summary-row .val{ font-weight:600; text-align:right; }
+.summary-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--ink);
+}
+.summary-total .lbl{
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:600;
+}
+.summary-total .val{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:700;
+}
+.summary-hint{
+  font-size:12px;
+  color:var(--ink2);
+  margin-top:12px;
+}
+
+.checkout-form{
+  margin-top:20px;
+  display:none;
+}
+.checkout-form.show{ display:block; }
+.checkout-form .field{ margin-bottom:12px; }
+.checkout-actions{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+.checkout-actions .btn{ width:auto; flex:1; min-width:180px; }
+
+/* ==================================================
+   ONE-OFF CLAY
+   ================================================== */
+#one-off{ background:#F1E9DA; }
+.oneoff-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media (max-width:900px){ .oneoff-grid{ grid-template-columns:1fr; } }
+.oneoff-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+}
+.oneoff-card .oimg{
+  aspect-ratio:1;
+  background:#e6ddcd;
+  position:relative;
+}
+.oneoff-card .oimg img{ width:100%;height:100%;object-fit:cover; }
+.oneoff-card.sold .oimg::after{
+  content:"SOLD";
+  position:absolute; inset:0;
+  background:rgba(43,37,32,0.55);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--serif);
+  font-size:22px;
+  letter-spacing:0.1em;
+}
+.oneoff-body{ padding:18px; }
+.oneoff-body h4{
+  font-family:var(--serif);
+  font-size:19px;
+  margin:0 0 4px;
+}
+.oneoff-body .op{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:17px;
+  margin-bottom:8px;
+}
+.oneoff-body p{
+  font-size:12.5px;
+  color:var(--ink2);
+  margin:0 0 14px;
+}
+.oneoff-when{
+  text-align:center;
+  font-size:12px;
+  color:var(--ink2);
+  margin-top:20px;
+  font-style:italic;
+}
+
+/* ==================================================
+   INTENTION + BESPOKE
+   ================================================== */
+.center-copy{
+  max-width:560px;
+  margin:0 auto;
+  text-align:center;
+}
+.center-copy p{ color:var(--ink2); font-size:14.5px; }
+.intention-sub{
+  margin-top:26px;
+  border-top:1px solid var(--line2);
+  padding-top:26px;
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.intention-sub h4{
+  font-family:var(--serif);
+  font-size:19px;
+  text-align:center;
+  margin-bottom:8px;
+}
+
+/* ==================================================
+   AUDIO
+   ================================================== */
+#audio-section .center-copy{ margin-bottom:22px; }
+audio{ width:100%; max-width:480px; display:block; margin:0 auto; }
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+footer{
+  padding:50px 24px 40px;
+  text-align:center;
+  color:var(--ink2);
+  font-size:12px;
+}
+footer .flogo{
+  font-family:var(--serif);
+  font-size:20px;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+footer .flinks{
+  margin-top:10px;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+footer .flinks a{ text-decoration:underline; text-underline-offset:3px; }
+
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     HEADER
+     ================================================ -->
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">HELD &amp; BOUND</a>
+    <a class="order-pill" id="orderPill" href="#order-summary">
+      <span class="dot"></span> <span id="orderPillText">Your order</span>
+    </a>
+    <div class="header-tag">BOTANICAL • SYMBOLIC • SMALL BATCH</div>
+  </div>
+</header>
+
+<!-- ================================================
+     HERO
+     ================================================ -->
+<div id="top"></div>
+<section class="hero">
+  <div class="kicker">HELD &amp; BOUND</div>
+  <h1>Hand-formed,<br>made with intention.</h1>
+  <p class="hero-sub">Choose your piece. Choose your botanical blend. Choose your symbol.<br>Every standard combination is included in the listed price.</p>
+  <div class="divider"></div>
+  <p class="hero-note">Want something made specifically for you?<br>Add <a href="#configurator">Personal Attunement</a> or <a href="#bespoke">request a bespoke piece</a>.</p>
+</section>
+
+<!-- ================================================
+     BRAND STATEMENT
+     ================================================ -->
+<section class="brand-statement">
+  <p>Choose the object. Choose what it should hold. Choose the mark. We make the rest by hand.</p>
+</section>
+
+<!-- ================================================
+     SHOP GRID
+     ================================================ -->
+<section class="panel" id="shop">
+  <div class="section-head">
+    <h2>Choose your piece</h2>
+    <p>Seven hand-formed objects. Every one is finished with your chosen blend, mark and ritual.</p>
+  </div>
+  <div class="shop-grid" id="shopGrid"></div>
+</section>
+
+<!-- ================================================
+     CONFIGURATOR (steps 2–5, shared panel)
+     ================================================ -->
+<section class="panel" id="configurator">
+
+  <div class="config-product-head">
+    <div class="thumb"><img id="cfgThumb" src="" alt=""></div>
+    <div class="info">
+      <h3 id="cfgName"></h3>
+      <div class="price" id="cfgPrice"></div>
+    </div>
+  </div>
+
+  <div class="scroll-gallery" id="cfgGallery"></div>
+  <div class="gallery-dots" id="cfgDots"></div>
+
+  <!-- STEP 2: BLEND -->
+  <div class="step" id="stepBlend">
+    <div class="step-head">
+      <h3>Choose your blend</h3>
+      <p class="intro">Each Hard Bake blend changes both the natural colour and character of the finished piece.</p>
+    </div>
+    <div class="blend-grid" id="blendGrid"></div>
+    <p class="blend-note">Each piece is handmade. Natural variation in colour, texture, crackle and botanical detail is part of the process.</p>
+  </div>
+
+  <!-- STEP 3: MARK -->
+  <div class="step" id="stepMark">
+    <div class="step-head">
+      <h3>Choose your mark</h3>
+    </div>
+    <div class="mark-grid" id="markGrid"></div>
+  </div>
+
+  <!-- STEP 4: ATTUNEMENT -->
+  <div class="step" id="stepAttune">
+    <div class="step-head">
+      <h3>Make it personal</h3>
+    </div>
+    <div class="attune-grid">
+      <button class="attune-card" data-attune="standard" onclick="selectAttune('standard')">
+        <div class="name">Standard</div>
+        <div class="amt">Included</div>
+        <p>Handmade with your selected blend and mark, and finished with a simple blessing ritual before dispatch.</p>
+      </button>
+      <button class="attune-card" data-attune="personal" onclick="selectAttune('personal')">
+        <div class="name">Personal Attunement</div>
+        <div class="amt">+£28 / +$35</div>
+        <p>For a piece made with a specific person or intention in mind. Includes a personal candle ritual and attunement before dispatch.</p>
+      </button>
+    </div>
+
+    <div class="attune-fields" id="attuneFields">
+      <p class="intro" style="margin-bottom:16px;">You may optionally share any of the following — all details are used only for your ritual and deleted afterwards.</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="pName">Name</label>
+          <input type="text" id="pName" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label for="pDob">Date of birth</label>
+          <input type="text" id="pDob" placeholder="Optional">
+        </div>
+      </div>
+      <div class="field">
+        <label for="pIntention">Written intention</label>
+        <textarea id="pIntention" placeholder="What should this piece hold?"></textarea>
+      </div>
+      <div class="field">
+        <label for="pPhoto">Photo (optional — mention in order notes, or email separately after checkout)</label>
+        <input type="text" id="pPhoto" placeholder="Note whether you'll send a photo by email">
+      </div>
+      <p class="disclaimer">Personal Attunement is offered as a symbolic and ritual practice. No specific outcome is guaranteed. Photos are optional and deleted afterwards.</p>
+    </div>
+  </div>
+
+  <!-- STEP 5: ORDER SUMMARY -->
+  <div class="step" id="order-summary">
+    <div class="step-head">
+      <h3>Your order</h3>
+    </div>
+    <div class="summary-box">
+      <div class="summary-row"><span class="lbl">Product</span><span class="val" id="sumProduct">—</span></div>
+      <div class="summary-row"><span class="lbl">Blend</span><span class="val" id="sumBlend">—</span></div>
+      <div class="summary-row"><span class="lbl">Symbol</span><span class="val" id="sumMark">—</span></div>
+      <div class="summary-row"><span class="lbl">Finish</span><span class="val" id="sumAttune">—</span></div>
+      <div class="summary-total"><span class="lbl">Total</span><span class="val" id="sumTotal">£0.00</span></div>
+      <p class="summary-hint">Complete every step above to enable checkout.</p>
+    </div>
+
+    <div style="margin-top:22px;">
+      <button class="btn clay btn-auto" id="checkoutToggle" onclick="toggleCheckoutForm()" disabled>Continue to checkout</button>
+    </div>
+
+    <div class="checkout-form" id="checkoutForm">
+      <div class="field-row">
+        <div class="field">
+          <label for="cName">Your name</label>
+          <input type="text" id="cName" placeholder="Full name">
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cNotes">Order notes (optional)</label>
+        <textarea id="cNotes" placeholder="Anything else we should know"></textarea>
+      </div>
+      <div class="checkout-actions">
+        <button class="btn" id="checkoutBtn" onclick="goToCheckout()">Proceed to secure payment</button>
+      </div>
+      <p class="summary-hint" id="checkoutNote"></p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================================================
+     ONE-OFF CLAY
+     ================================================ -->
+<section class="panel" id="one-off">
+  <div class="section-head">
+    <h2>One-Off Clay</h2>
+    <p>Real Clay • One of One</p>
+  </div>
+  <div class="center-copy" style="margin-bottom:28px;">
+    <p>Only three pieces available at a time. Each is hand-formed individually and will not be repeated exactly. Real clay, heavier feel, raw edge, hand-finished, H&amp;B stamped.</p>
+  </div>
+  <div class="oneoff-grid" id="oneoffGrid"></div>
+  <p class="oneoff-when">When it's gone, it's gone.</p>
+</section>
+
+<!-- ================================================
+     MADE WITH INTENTION
+     ================================================ -->
+<section class="panel" id="intention">
+  <div class="section-head">
+    <h2>Made with intention</h2>
+  </div>
+  <div class="center-copy">
+    <p>Every Held &amp; Bound piece is formed slowly by hand.</p>
+    <p>The material, botanicals and mark are chosen deliberately, and each piece is finished with a simple blessing ritual before leaving the studio.</p>
+  </div>
+  <div class="intention-sub">
+    <h4>On Personal Attunement</h4>
+    <div class="center-copy">
+      <p>Some pieces are made with a specific person or intention in mind. For these, we hold a short candle ritual and attunement before dispatch — a quiet, deliberate act, not a promise of outcome. It's an option, never a requirement, and it changes nothing about how carefully a standard piece is made.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     BESPOKE / CUSTOM
+     ================================================ -->
+<section class="panel" id="bespoke">
+  <div class="section-head">
+    <h2>Something different in mind?</h2>
+  </div>
+  <div class="center-copy" style="margin-bottom:24px;">
+    <p>Memorial inclusions, ashes, hair, custom botanical combinations, larger pieces, custom sigils and unusual commissions are quoted individually.</p>
+  </div>
+  <div style="max-width:280px;margin:0 auto;">
+    <a class="btn" href="mailto:hello@heldandbound.com?subject=Bespoke%20piece%20enquiry">Message Held &amp; Bound</a>
+  </div>
+</section>
+
+<!-- ================================================
+     AUDIO
+     ================================================ -->
+<section class="panel" id="audio-section">
+  <div class="section-head">
+    <h2>Earth Minerals — new song</h2>
+  </div>
+  <div class="center-copy">
+    <p>Stunning, earthy, held with intention. Press play while you browse — made to sit with your talismans.</p>
+  </div>
+  <audio controls preload="none">
+    <source src="audio/earth-minerals.mp3" type="audio/mpeg">
+    <source src="audio/earth-minerals.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+</section>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer>
+  <div class="flogo">HELD &amp; BOUND</div>
+  <div>Botanical • Symbolic • Small Batch</div>
+  <div class="flinks">
+    <a href="#shop">Shop</a>
+    <a href="#one-off">One-Off Clay</a>
+    <a href="#bespoke">Bespoke</a>
+    <a href="mailto:hello@heldandbound.com">Contact</a>
+  </div>
+  <div style="margin-top:18px;">© <span id="year"></span> Held &amp; Bound. All pieces handmade to order.</div>
+</footer>
+
+<script>
+/* ==================================================
+   CONFIG — edit these before launch
+   ================================================== */
+
+// Number of gallery images to look for per product folder (1.jpg, 2.jpg, ...)
+const GALLERY_COUNT = 4;
+
+const PRODUCTS = [
+  { id:'rune-set',        name:'Rune Set',         price:27.99, desc:'24 Elder Futhark runes + 1 optional blank + pouch' },
+  { id:'hanging-talisman',name:'Hanging Talisman',  price:14.99, desc:'Hand-formed symbolic hanging piece' },
+  { id:'held-stone',      name:'Held Stone',        price:9.99,  desc:'Palm-sized tactile stone made to be held' },
+  { id:'botanical-tile',  name:'Botanical Tile',    price:14.99, desc:'Hand-pressed symbolic botanical tile' },
+  { id:'pendant',         name:'Pendant',           price:14.99, desc:'Wearable symbolic piece' },
+  { id:'cone-holder',     name:'Cone Holder',       price:14.99, desc:'Hand-formed cone incense holder' },
+  { id:'keepsake',        name:'Keepsake',          price:19.99, desc:'For remembrance, marking and keeping' },
+];
+
+const BLENDS = [
+  { id:'raw',      name:'Raw',       tag:'RAW',      img:'images/raw.jpg',      desc:'Natural cream. No added botanical blend.', mood:'Simple • Quiet • Unbound' },
+  { id:'moonmilk', name:'Moonmilk',  tag:'MOONMILK', img:'images/moonmilk.jpg', desc:'Soft botanical cream. Lavender • Chamomile • Fine Salt.', mood:'Rest • Calm • Intuition' },
+  { id:'heartfire',name:'Heartfire', tag:'HEARTFIRE',img:'images/heartfire.jpg',desc:'Warm paprika / terracotta. Paprika • Turmeric.', mood:'Courage • Warmth • Vitality' },
+  { id:'charcoal', name:'Charcoal',  tag:'CHARCOAL', img:'images/charcoal.jpg', desc:'Deep smoke black. Rough mineral / intentional crackle texture.', mood:'Grounding • Protection • Strength' },
+];
+
+const MARKS = [
+  { id:'algiz',   glyph:'ᛉ', name:'ALGIZ',   meaning:'Protection • Defence • Awareness' },
+  { id:'berkano', glyph:'ᛒ', name:'BERKANO', meaning:'Growth • Renewal • Becoming' },
+  { id:'raidho',  glyph:'ᚱ', name:'RAIDHO',  meaning:'Journey • Direction • Movement' },
+  { id:'fehu',    glyph:'ᚠ', name:'FEHU',    meaning:'Wealth • Prosperity • Resources' },
+  { id:'unmarked',glyph:'—', name:'UNMARKED',meaning:'No symbol' },
+];
+
+const ONEOFF = [
+  { title:'One-Off Vessel I',  price:'£42.00', desc:'Real clay, raw edge, charcoal-toned finish. H&B stamped on the base.', img:'images/once-off/1.jpg', sold:false },
+  { title:'One-Off Vessel II', price:'£38.00', desc:'Heavier real-clay talisman with hand-carved mark and natural pit-fire marking.', img:'images/once-off/2.jpg', sold:false },
+  { title:'One-Off Vessel III',price:'£45.00', desc:'Sculptural keepsake form, single edition, will not be repeated.', img:'images/once-off/3.jpg', sold:true },
+];
+
+// Replace with real Stripe Payment Links before launch.
+const STRIPE_LINKS = {
+  'rune-set':         { standard:'https://buy.stripe.com/REPLACE_rune_standard',        attuned:'https://buy.stripe.com/REPLACE_rune_attuned' },
+  'hanging-talisman': { standard:'https://buy.stripe.com/REPLACE_talisman_standard',    attuned:'https://buy.stripe.com/REPLACE_talisman_attuned' },
+  'held-stone':       { standard:'https://buy.stripe.com/REPLACE_stone_standard',       attuned:'https://buy.stripe.com/REPLACE_stone_attuned' },
+  'botanical-tile':   { standard:'https://buy.stripe.com/REPLACE_tile_standard',        attuned:'https://buy.stripe.com/REPLACE_tile_attuned' },
+  'pendant':          { standard:'https://buy.stripe.com/REPLACE_pendant_standard',     attuned:'https://buy.stripe.com/REPLACE_pendant_attuned' },
+  'cone-holder':      { standard:'https://buy.stripe.com/REPLACE_cone_standard',        attuned:'https://buy.stripe.com/REPLACE_cone_attuned' },
+  'keepsake':         { standard:'https://buy.stripe.com/REPLACE_keepsake_standard',    attuned:'https://buy.stripe.com/REPLACE_keepsake_attuned' },
+};
+
+const ATTUNE_PRICE = 28;
+
+/* ==================================================
+   STATE
+   ================================================== */
+let state = {
+  product:null,
+  blend:null,
+  mark:null,
+  attune:null, // 'standard' | 'personal'
+};
+
+/* ==================================================
+   RENDER: SHOP GRID
+   ================================================== */
+const shopGrid = document.getElementById('shopGrid');
+PRODUCTS.forEach(p=>{
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-image"><img src="images/${p.id}/1.jpg" alt="${p.name}" loading="lazy"></div>
+    <div class="card-body">
+      <div class="card-title">${p.name}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-price">£${p.price.toFixed(2)}</div>
+      <div class="card-meta">4 blends • choose your mark</div>
+      <button class="btn" onclick="openConfigurator('${p.id}')">Choose yours →</button>
+    </div>
+  `;
+  shopGrid.appendChild(card);
+});
+
+/* ==================================================
+   RENDER: ONE-OFF CLAY
+   ================================================== */
+const oneoffGrid = document.getElementById('oneoffGrid');
+ONEOFF.forEach(o=>{
+  const card = document.createElement('div');
+  card.className = 'oneoff-card' + (o.sold ? ' sold' : '');
+  card.innerHTML = `
+    <div class="oimg"><img src="${o.img}" alt="${o.title}" loading="lazy"></div>
+    <div class="oneoff-body">
+      <h4>${o.title}</h4>
+      <div class="op">${o.price}</div>
+      <p>${o.desc}</p>
+      ${o.sold ? '<button class="btn secondary" disabled>Sold</button>' : '<a class="btn clay" href="mailto:hello@heldandbound.com?subject=One-Off%20Clay%20—%20'+encodeURIComponent(o.title)+'">Buy this piece</a>'}
+    </div>
+  `;
+  oneoffGrid.appendChild(card);
+});
+
+/* ==================================================
+   CONFIGURATOR LOGIC
+   ================================================== */
+function openConfigurator(productId){
+  const product = PRODUCTS.find(p=>p.id===productId);
+  if(!product) return;
+
+  state = { product, blend:null, mark:null, attune:null };
+
+  document.getElementById('cfgThumb').src = `images/${product.id}/1.jpg`;
+  document.getElementById('cfgThumb').alt = product.name;
+  document.getElementById('cfgName').textContent = product.name;
+  document.getElementById('cfgPrice').textContent = `£${product.price.toFixed(2)}`;
+
+  // gallery
+  const gallery = document.getElementById('cfgGallery');
+  const dots = document.getElementById('cfgDots');
+  gallery.innerHTML = '';
+  dots.innerHTML = '';
+  for(let i=1;i<=GALLERY_COUNT;i++){
+    const img = document.createElement('img');
+    img.src = `images/${product.id}/${i}.jpg`;
+    img.alt = `${product.name} — image ${i}`;
+    img.loading = 'lazy';
+    gallery.appendChild(img);
+    const dot = document.createElement('span');
+    if(i===1) dot.className='active';
+    dots.appendChild(dot);
+  }
+  gallery.onscroll = ()=>{
+    const idx = Math.round(gallery.scrollLeft / gallery.clientWidth);
+    [...dots.children].forEach((d,i)=> d.className = i===idx ? 'active' : '');
+  };
+
+  // blend grid
+  const blendGrid = document.getElementById('blendGrid');
+  blendGrid.innerHTML = '';
+  BLENDS.forEach(b=>{
+    const el = document.createElement('button');
+    el.className = 'select-card';
+    el.dataset.blend = b.id;
+    el.innerHTML = `
+      <div class="img-wrap">
+        <img src="${b.img}" alt="${b.name}" loading="lazy">
+        <span class="tag">${b.tag}</span>
+        <span class="check">✓</span>
+      </div>
+      <div class="name">${b.name}</div>
+      <div class="desc">${b.desc}</div>
+      <div class="mood">${b.mood}</div>
+    `;
+    el.onclick = ()=> selectBlend(b.id);
+    blendGrid.appendChild(el);
+  });
+
+  // mark grid
+  const markGrid = document.getElementById('markGrid');
+  markGrid.innerHTML = '';
+  MARKS.forEach(m=>{
+    const el = document.createElement('button');
+    el.className = 'mark-card';
+    el.dataset.mark = m.id;
+    el.innerHTML = `
+      <div class="mark-glyph">${m.glyph}</div>
+      <div class="mark-name">${m.name}</div>
+      <div class="mark-meaning">${m.meaning}</div>
+    `;
+    el.onclick = ()=> selectMark(m.id);
+    markGrid.appendChild(el);
+  });
+
+  // reset attunement UI
+  document.querySelectorAll('.attune-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('attuneFields').classList.remove('show');
+  document.getElementById('checkoutForm').classList.remove('show');
+
+  document.getElementById('configurator').classList.add('active');
+  updateSummary();
+
+  setTimeout(()=>{
+    document.getElementById('configurator').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 30);
+}
+
+function selectBlend(id){
+  state.blend = BLENDS.find(b=>b.id===id);
+  document.querySelectorAll('#blendGrid .select-card').forEach(el=>{
+    el.classList.toggle('selected', el.dataset.blend===id);
+  });
+  updateSummary();
+}
+
+function selectMark(id){
+  state.mark = MARKS.find(m=>m.id===id);
+  document.querySelectorAll('#markGrid .mark-card').forEach(el=>{
+    el.classList.toggle('selected', el.dataset.mark===id);
+  });
+  updateSummary();
+}
+
+function selectAttune(kind){
+  state.attune = kind;
+  document.querySelectorAll('.attune-card').forEach(el=>{
+    el.classList.toggle('selected', el.dataset.attune===kind);
+  });
+  document.getElementById('attuneFields').classList.toggle('show', kind==='personal');
+  updateSummary();
+}
+
+function updateSummary(){
+  const { product, blend, mark, attune } = state;
+
+  document.getElementById('sumProduct').textContent = product ? product.name : '—';
+  document.getElementById('sumBlend').textContent = blend ? blend.name : '—';
+  document.getElementById('sumMark').textContent = mark ? mark.name.charAt(0)+mark.name.slice(1).toLowerCase() : '—';
+  document.getElementById('sumAttune').textContent = attune ? (attune==='personal' ? 'Personally Attuned' : 'Standard') : '—';
+
+  let total = product ? product.price : 0;
+  if(attune === 'personal') total += ATTUNE_PRICE;
+  document.getElementById('sumTotal').textContent = `£${total.toFixed(2)}`;
+
+  const ready = product && blend && mark && attune;
+  document.getElementById('checkoutToggle').disabled = !ready;
+  document.getElementById('summaryHintUpdate') || null;
+  const hint = document.querySelector('#order-summary .summary-hint');
+  if(hint) hint.textContent = ready ? 'Ready to checkout.' : 'Complete every step above to enable checkout.';
+
+  // header order pill
+  const pill = document.getElementById('orderPill');
+  const pillText = document.getElementById('orderPillText');
+  if(product){
+    pill.classList.add('show');
+    pillText.textContent = `${product.name} · £${total.toFixed(2)}`;
+  } else {
+    pill.classList.remove('show');
+  }
+}
+
+function toggleCheckoutForm(){
+  document.getElementById('checkoutForm').classList.toggle('show');
+  if(document.getElementById('checkoutForm').classList.contains('show')){
+    document.getElementById('checkoutForm').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function goToCheckout(){
+  const { product, blend, mark, attune } = state;
+  if(!product || !blend || !mark || !attune) return;
+
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const notes = document.getElementById('cNotes').value.trim();
+
+  if(!name || !email){
+    document.getElementById('checkoutNote').textContent = 'Please add your name and email before checkout.';
+    return;
+  }
+
+  const links = STRIPE_LINKS[product.id];
+  const url = attune === 'personal' ? links.attuned : links.standard;
+
+  let summaryText =
+    `Held & Bound order\n`+
+    `Product: ${product.name}\n`+
+    `Blend: ${blend.name}\n`+
+    `Symbol: ${mark.name}\n`+
+    `Finish: ${attune==='personal' ? 'Personally Attuned' : 'Standard'}\n`+
+    `Name: ${name}\nEmail: ${email}\n`;
+  if(attune === 'personal'){
+    const pName = document.getElementById('pName').value.trim();
+    const pDob = document.getElementById('pDob').value.trim();
+    const pIntention = document.getElementById('pIntention').value.trim();
+    summaryText += `Attunement for: ${pName || '—'}\nDOB: ${pDob || '—'}\nIntention: ${pIntention || '—'}\n`;
+  }
+  if(notes) summaryText += `Notes: ${notes}\n`;
+
+  navigator.clipboard?.writeText(summaryText).catch(()=>{});
+
+  document.getElementById('checkoutNote').textContent =
+    "We've copied your order details to your clipboard — paste them into the order notes field on the payment page if you're asked, so we can match your selections to your payment.";
+
+  window.open(url, '_blank', 'noopener');
+}
+
+/* footer year */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
